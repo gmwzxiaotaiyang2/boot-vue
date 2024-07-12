@@ -13,8 +13,10 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@faker-js/faker": "^8.4.1",
     "axios": "^1.7.2",
     "element-plus": "^2.7.6",
+    "mockjs": "^1.1.0",
     "vue": "^3.4.29"
   },
   "devDependencies": {
@@ -30,6 +32,7 @@
     "stylelint-scss": "^6.4.1",
     "unplugin-auto-import": "^0.18.0",
     "unplugin-vue-components": "^0.27.2",
-    "vite": "^5.3.1"
+    "vite": "^5.3.1",
+    "vite-plugin-fake-server": "^2.1.1"
   }
 }
