@@ -6,7 +6,7 @@
   // 自动修复
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "never"
+    "source.fixAll.stylelint": "explicit"
   },
 
   // 在 IDE 中静默样式规则，但仍然自动修复它们
@@ -45,5 +45,13 @@
     "scss",
     "pcss",
     "postcss"
+  ],
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "vue"
   ]
 }
