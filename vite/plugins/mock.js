@@ -1,4 +1,4 @@
-﻿import { vitePluginFakeServer } from 'vite-plugin-fake-server'
+import { vitePluginFakeServer } from 'vite-plugin-fake-server'
 
 export default function createMock(env, isBuild) {
   const { VITE_BUILD_MOCK } = env
