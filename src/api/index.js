@@ -18,7 +18,11 @@ axios.interceptors.request.use((config) => {
 axios.interceptors.response.use((response) => {
   // 2xx 范围内的状态码都会触发该函数。
   // 对响应数据做点什么
-  return response
+  if (response.data.code !== 200) {
+    Promise.reject(response.data)
+  }
+
+  return Promise.resolve(response)
 }, (error) => {
   // 超出 2xx 范围的状态码都会触发该函数。
   // 对响应错误做点什么

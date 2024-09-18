@@ -36,10 +36,10 @@ export default defineFakeRoute([
     response: ({ body }) => {
       return {
         msg: '',
-        code: 0,
+        code: 200,
         data: Mock.mock({
-          account: body.account,
-          token: `${body.account}_@string`,
+          username: body.username,
+          token: `${body.username}_@string`,
           avatar: 'https://fantastic-admin.github.io/logo.png',
         }),
       }

@@ -2,6 +2,8 @@
 import Logo from '@/assets/png/logo.png'
 import userApi from '@/api/modules/user'
 
+const router = useRouter()
+
 const username = ref('')
 const password = ref('')
 
@@ -12,6 +14,7 @@ function usernameChaged(target) {
 function login() {
   userApi.login({ username: username.value, password: password.value }).then((result) => {
     console.log(result)
+    router.push('/')
   }).catch((err) => {
     console.log(err)
   })
