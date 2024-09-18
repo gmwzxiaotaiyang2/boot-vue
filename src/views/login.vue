@@ -1,11 +1,20 @@
 <script setup>
 import Logo from '@/assets/png/logo.png'
+import userApi from '@/api/modules/user'
 
 const username = ref('')
 const password = ref('')
 
 function usernameChaged(target) {
   console.log(target)
+}
+
+function login() {
+  userApi.login({ username: username.value, password: password.value }).then((result) => {
+    console.log(result)
+  }).catch((err) => {
+    console.log(err)
+  })
 }
 </script>
 
@@ -30,7 +39,7 @@ function usernameChaged(target) {
             <div class="i-mdi:password w-1em h-1em" />
           </template>
         </el-input>
-        <el-button type="primary" width="100%">
+        <el-button type="primary" width="100%" @click="login">
           登录
         </el-button>
       </div>

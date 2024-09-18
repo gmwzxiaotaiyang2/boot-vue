@@ -25,7 +25,9 @@ export default async ({ mode, command }) => {
     // 这里可以添加其他 Vite 配置选项
     // 例如：
     // base: '/',
-    // server: { ... },
+    server: {
+      port: 9000,
+    },
     // build: { ... },
     // resolve: { ... },
     // css: { ... },
