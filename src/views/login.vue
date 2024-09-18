@@ -8,6 +8,7 @@
     <div class="login-input">
       <div class="input-body">
         <h4>欢迎使用 ******* 系统！</h4>
+        <el-input>niaho</el-input>
       </div>
     </div>
   </div>
