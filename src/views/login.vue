@@ -1,14 +1,38 @@
+<script setup>
+import Logo from '@/assets/png/logo.png'
+
+const username = ref('')
+const password = ref('')
+
+function usernameChaged(target) {
+  console.log(target)
+}
+</script>
+
 <template>
   <div class="login-frame">
     <div class="system-logo">
       <div>
-        扬州大自然
+        <!-- 扬州大自然 -->
+        <img :src="Logo">
       </div>
     </div>
     <div class="login-input">
       <div class="input-body">
         <h4>欢迎使用 ******* 系统！</h4>
-        <el-input>niaho</el-input>
+        <el-input v-model="username" @change="usernameChaged">
+          <template #prefix>
+            <div class="i-mdi:user w-1em h-1em" />
+          </template>
+        </el-input>
+        <el-input v-model="password" type="password">
+          <template #prefix>
+            <div class="i-mdi:password w-1em h-1em" />
+          </template>
+        </el-input>
+        <el-button type="primary" width="100%">
+          登录
+        </el-button>
       </div>
     </div>
   </div>
@@ -40,7 +64,11 @@
   margin: auto;
 
   .input-body {
-    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    padding: 20% 50px;
   }
 }
 </style>
