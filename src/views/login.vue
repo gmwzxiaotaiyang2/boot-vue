@@ -1,18 +1,19 @@
 <script setup>
 import Logo from '@/assets/png/logo.png'
-import userApi from '@/api/modules/user'
+import { userStore } from '@/stores/userStore'
 
+const user = userStore()
 const router = useRouter()
 
 const username = ref('')
 const password = ref('')
 
 function usernameChaged(target) {
-  console.log(target)
+  // console.log(target)
 }
 
 function login() {
-  userApi.login({ username: username.value, password: password.value }).then((result) => {
+  user.login({ username: username.value, password: password.value }).then((result) => {
     console.log(result)
     router.push('/')
   }).catch((err) => {
