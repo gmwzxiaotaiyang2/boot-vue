@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import router from '@/router'
 import userApi from '@/api/modules/user'
 
 // useStore 可以是 useUser、useCart 之类的任何东西
@@ -34,6 +35,7 @@ export const userStore = defineStore('user', {
       this.username = undefined
       this.token = undefined
       this.avatar = undefined
+      router.push('/login')
     },
 
   },

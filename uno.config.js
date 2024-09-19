@@ -4,8 +4,8 @@ export default defineConfig({
   // ...UnoCSS options
   presets: [
     presetAttributify({ /* preset 选项 */}),
-    presetUno(),
     presetIcons(),
+    presetUno(),
     // ...自定义 presets
   ],
 })

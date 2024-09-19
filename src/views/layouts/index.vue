@@ -3,17 +3,49 @@ import { userStore } from '@/stores/userStore'
 
 const user = userStore()
 const title = ref(import.meta.env.VITE_APP_TITLE)
+
+function handleMenuClick(command) {
+  switch (command) {
+    case 'logout':{
+      user.logout()
+      break
+    }
+  }
+}
 </script>
 
 <template>
   <el-container>
     <el-header>
-      <div class="title">
-        {{ title }}
+      <div class="header-left">
+        <div class="title">
+          {{ title }}
+        </div>
+        <div class="menu">
+          <el-menu
+            :router="true"
+            default-active="/index"
+            background-color="#fff0"
+            text-color="#fff"
+            active-text-color="#000"
+            mode="horizontal"
+            :ellipsis="false"
+          >
+            <el-menu-item index="/underway">
+              进行中
+            </el-menu-item>
+            <el-menu-item index="/test">
+              已预约
+            </el-menu-item>
+            <el-menu-item index="/index">
+              历史
+            </el-menu-item>
+          </el-menu>
+        </div>
       </div>
 
       <div class="user">
-        <el-dropdown>
+        <el-dropdown @command="handleMenuClick">
           <span class="el-dropdown-link">
             {{ user.username }}
             <el-icon class="el-icon--right">
@@ -22,14 +54,8 @@ const title = ref(import.meta.env.VITE_APP_TITLE)
           </span>
           <template #dropdown>
             <el-dropdown-menu>
-              <el-dropdown-item>Action 1</el-dropdown-item>
-              <el-dropdown-item>Action 2</el-dropdown-item>
-              <el-dropdown-item>Action 3</el-dropdown-item>
-              <el-dropdown-item disabled>
-                Action 4
-              </el-dropdown-item>
-              <el-dropdown-item divided>
-                Action 5
+              <el-dropdown-item command="logout">
+                退出登录
               </el-dropdown-item>
             </el-dropdown-menu>
           </template>
@@ -59,11 +85,26 @@ const title = ref(import.meta.env.VITE_APP_TITLE)
   height: 100vh;
 }
 
-.title {
-  left: 0;
+.el-header {
+  display: flex;
+  place-content: center space-between;
+  background-color: #3894ff;
 }
 
-.user {
-  right: 0;
+.header-left {
+  display: flex;
+  align-content: start;
+  margin: auto 0;
+  font-size: large;
+  font-weight: bold;
+  color: #fff;
+}
+
+.title {
+  margin: auto 0;
+}
+
+.menu {
+  margin-left: 50px;
 }
 </style>

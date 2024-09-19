@@ -23,29 +23,31 @@ function login() {
 </script>
 
 <template>
-  <div class="login-frame">
-    <div class="system-logo">
-      <div>
-        <!-- 扬州大自然 -->
-        <img :src="Logo">
+  <div class=" flex justify-center h-screen flex-wrap flex-items-center">
+    <div class="login-frame">
+      <div class="system-logo">
+        <div>
+          <!-- 扬州大自然 -->
+          <img :src="Logo">
+        </div>
       </div>
-    </div>
-    <div class="login-input">
-      <div class="input-body">
-        <h4>欢迎使用 ******* 系统！</h4>
-        <el-input v-model="username" @change="usernameChaged">
-          <template #prefix>
-            <div class="i-mdi:user w-1em h-1em" />
-          </template>
-        </el-input>
-        <el-input v-model="password" type="password">
-          <template #prefix>
-            <div class="i-mdi:password w-1em h-1em" />
-          </template>
-        </el-input>
-        <el-button type="primary" width="100%" @click="login">
-          登录
-        </el-button>
+      <div class="login-input">
+        <div class="input-body">
+          <h4>欢迎使用 ******* 系统！</h4>
+          <el-input v-model="username" @change="usernameChaged">
+            <template #prefix>
+              <div class="i-mdi:user w-1em h-1em" />
+            </template>
+          </el-input>
+          <el-input v-model="password" type="password">
+            <template #prefix>
+              <div class="i-mdi:password w-1em h-1em" />
+            </template>
+          </el-input>
+          <el-button type="primary" width="100%" @click="login">
+            登录
+          </el-button>
+        </div>
       </div>
     </div>
   </div>
@@ -56,7 +58,7 @@ function login() {
   display: grid;
   grid-template-columns: minmax(250px, 50%) 1fr;
   min-width: 800px;
-  min-height: 500px;
+  height: 500px;
 
   // background-color: rgb(206 206 206);
   border-radius: 20px;
@@ -80,7 +82,7 @@ function login() {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 100%;
+    height: 300px;
     padding: 20% 50px;
   }
 }
