@@ -1,4 +1,5 @@
 <script setup>
+import { ArrowDown } from '@element-plus/icons-vue'
 import { userStore } from '@/stores/userStore'
 
 const user = userStore()
@@ -44,12 +45,13 @@ function handleMenuClick(command) {
         </div>
       </div>
 
-      <div class="user">
+      <div class="user flex flex-justify-center">
         <el-dropdown @command="handleMenuClick">
-          <span class="el-dropdown-link">
+          <span class=" username">
+            <img :src="user.avatar" alt="" width="20px">
             {{ user.username }}
             <el-icon class="el-icon--right">
-              <arrow-down />
+              <ArrowDown />
             </el-icon>
           </span>
           <template #dropdown>
@@ -106,5 +108,12 @@ function handleMenuClick(command) {
 
 .menu {
   margin-left: 50px;
+}
+
+.username {
+  margin: auto 0;
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
 }
 </style>

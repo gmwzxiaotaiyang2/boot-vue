@@ -7,7 +7,7 @@ const routes = [
   {
     path: '/',
     component: () => import('@/views/layouts/index.vue'),
-    redirect: '/index',
+    redirect: '/underway',
     children: [
       {
         path: 'index',
@@ -20,6 +20,10 @@ const routes = [
       {
         path: '/underway',
         component: () => import('@/views/underway/index.vue'),
+      },
+      {
+        path: '/preview',
+        component: () => import('@/views/preview/index.vue'),
       },
     ],
   },
