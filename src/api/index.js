@@ -20,7 +20,7 @@ instance.interceptors.response.use((response) => {
   // 对响应数据做点什么
   // console.log(response.data)
   if (response.data.code !== 200) {
-    Promise.reject(response.data)
+    return Promise.reject(response.data)
   }
 
   return Promise.resolve(response.data)
